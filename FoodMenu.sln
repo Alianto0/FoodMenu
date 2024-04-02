@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34525.116
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodMenu.Api", "src\FoodMenu.Api\FoodMenu.Api.csproj", "{C702FF3F-231C-4589-9A72-081A6D9D7626}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoodMenu.Api", "src\FoodMenu.Api\FoodMenu.Api.csproj", "{C702FF3F-231C-4589-9A72-081A6D9D7626}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{0DDF7110-35B4-4FCC-BA53-D6E44F3E2A5C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodMenu.Api.UnitTests", "tests\FoodMenu.Api.UnitTests\FoodMenu.Api.UnitTests.csproj", "{F74CE71A-D383-4F28-AE81-EDA217BFC00B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +19,16 @@ Global
 		{C702FF3F-231C-4589-9A72-081A6D9D7626}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C702FF3F-231C-4589-9A72-081A6D9D7626}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C702FF3F-231C-4589-9A72-081A6D9D7626}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F74CE71A-D383-4F28-AE81-EDA217BFC00B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F74CE71A-D383-4F28-AE81-EDA217BFC00B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F74CE71A-D383-4F28-AE81-EDA217BFC00B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F74CE71A-D383-4F28-AE81-EDA217BFC00B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F74CE71A-D383-4F28-AE81-EDA217BFC00B} = {0DDF7110-35B4-4FCC-BA53-D6E44F3E2A5C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {984D32FF-E5C4-404D-B571-D524D0B72794}

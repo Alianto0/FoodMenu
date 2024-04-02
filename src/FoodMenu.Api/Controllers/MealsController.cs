@@ -14,7 +14,7 @@ namespace FoodMenu.Api.Controllers
         }
 
         [HttpGet("{name}")]
-        public string Get(string name)
+        public string GetMealByName(string name)
         {
             return name;
         }
