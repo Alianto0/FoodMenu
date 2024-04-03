@@ -39,6 +39,7 @@ namespace FoodMenu.Api.Logic
 
         private async Task<List<SuggestionMeal>> GetMealSuggestionsByCategory(string category)
         {
+            // cacheing may be added to improve overal performance
             var response = await mealDbClient.FilterMealByCategory(category);
 
             List<SuggestionMeal> suggestionMeals;
@@ -50,6 +51,7 @@ namespace FoodMenu.Api.Logic
 
         private async Task<List<SuggestionMeal>> GetMealSuggestionsByArea(string area)
         {
+            // cacheing may be added to improve overal performance
             var response = await mealDbClient.FilterMealByArea(area);
 
             List<SuggestionMeal> suggestionMeals;
