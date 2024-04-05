@@ -9,16 +9,11 @@ namespace FoodMenu.Api.Logic
         Task<Meal> GetMealByName(string mealName);
     }
 
-    public class MealsRetriever : IMealsRetriever
+    public class MealsRetriever(ITheMealDbClient mealDbClient) : IMealsRetriever
     {
-        private readonly ITheMealDbClient mealDbClient;
+        private readonly ITheMealDbClient mealDbClient = mealDbClient;
         private const int SuggestedMealsByCategory = 5;
         private const int SuggestedMealsByArea = 3;
-
-        public MealsRetriever(ITheMealDbClient mealDbClient)
-        {
-            this.mealDbClient = mealDbClient;
-        }
 
         public async Task<Meal> GetMealByName(string mealName)
         {
@@ -39,7 +34,7 @@ namespace FoodMenu.Api.Logic
 
         private async Task<List<SuggestionMeal>> GetMealSuggestionsByCategory(string category)
         {
-            // cacheing may be added to improve overal performance
+            // caching may be added to improve overal performance
             var response = await mealDbClient.FilterMealByCategory(category);
 
             List<SuggestionMeal> suggestionMeals;
@@ -51,7 +46,7 @@ namespace FoodMenu.Api.Logic
 
         private async Task<List<SuggestionMeal>> GetMealSuggestionsByArea(string area)
         {
-            // cacheing may be added to improve overal performance
+            // caching may be added to improve overal performance
             var response = await mealDbClient.FilterMealByArea(area);
 
             List<SuggestionMeal> suggestionMeals;
