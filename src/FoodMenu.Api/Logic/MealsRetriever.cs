@@ -19,6 +19,12 @@ namespace FoodMenu.Api.Logic
         private const int SuggestedMealsByCategory = 5;
         private const int SuggestedMealsByArea = 3;
 
+        /// <summary>
+        /// Gets meal by tinput name.
+        /// </summary>
+        /// <param name="mealName">Name of the meal</param>
+        /// <returns>Meal with suggestions.</returns>
+        /// <exception cref="MealNotFoundException">Thrown if meal was not found.</exception>
         public async Task<Meal> GetMealByName(string mealName)
         {
             var response = await mealDbClient.SearchMealByName(mealName);

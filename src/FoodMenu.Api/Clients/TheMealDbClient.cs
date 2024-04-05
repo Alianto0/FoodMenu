@@ -22,6 +22,11 @@ namespace FoodMenu.Api.Clients
             _client = new RestClient();
         }
 
+        /// <summary>
+        /// Returns meal by name.
+        /// </summary>
+        /// <param name="name">Name to search for.</param>
+        /// <returns>Meals by name.</returns>
         public async Task<MealsDbResponse?> SearchMealByName(string name)
         {
             var uriBuilder = new UriBuilder($"{baseUrl}/search.php")
@@ -29,13 +34,17 @@ namespace FoodMenu.Api.Clients
                 Query = $"?s={name}"
             };
 
-
             var restRequest = new RestRequest(uriBuilder.Uri.ToString());
             var response = await _client.GetAsync<MealsDbResponse>(restRequest);
 
             return response;
         }
 
+        /// <summary>
+        /// Returns meals by Category.
+        /// </summary>
+        /// <param name="category">Category to search for.</param>
+        /// <returns>Meals in the Category.</returns>
         public async Task<MealsDbResponse?> FilterMealByCategory(string category)
         {
             var uriBuilder = new UriBuilder($"{baseUrl}/filter.php")
@@ -48,6 +57,11 @@ namespace FoodMenu.Api.Clients
             return response;
         }
 
+        /// <summary>
+        /// Returns meals by Area.
+        /// </summary>
+        /// <param name="category">Area to search for.</param>
+        /// <returns>Meals in the Area.</returns>
         public async Task<MealsDbResponse?> FilterMealByArea(string area)
         {
             var uriBuilder = new UriBuilder($"{baseUrl}/filter.php")
