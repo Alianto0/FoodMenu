@@ -27,7 +27,7 @@ namespace FoodMenu.Api.Controllers
             }
             catch (MealNotFoundException ex)
             {
-                return StatusCode(StatusCodes.Status404NotFound, new ProblemDetails() { Title = "Not found", Status = StatusCodes.Status404NotFound, Detail = ex.Message });                
+                return StatusCode(StatusCodes.Status404NotFound, new ProblemDetails() { Title = "Not found", Status = StatusCodes.Status404NotFound, Detail = ex.Message });
             }
         }
     }

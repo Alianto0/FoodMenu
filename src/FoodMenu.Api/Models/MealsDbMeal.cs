@@ -11,10 +11,10 @@ namespace FoodMenu.Api.Models
         public required string StrMeal { get; set; }
 
         [JsonPropertyName("strCategory")]
-        public required string StrCategory { get; set; }
+        public string? StrCategory { get; set; }
 
         [JsonPropertyName("strArea")]
-        public required string StrArea { get; set; }
+        public string? StrArea { get; set; }
     }
 }
 
