@@ -5,11 +5,14 @@ namespace FoodMenu.Api.Clients
 {
     public interface ITheMealDbClient
     {
-        Task<MealsDbResponse> FilterMealByArea(string area);
-        Task<MealsDbResponse> FilterMealByCategory(string category);
-        Task<MealsDbResponse> SearchMealByName(string name);
+        Task<MealsDbResponse?> FilterMealByArea(string area);
+        Task<MealsDbResponse?> FilterMealByCategory(string category);
+        Task<MealsDbResponse?> SearchMealByName(string name);
     }
 
+    /// <summary>
+    /// Client used to communicate with The Meal Db.
+    /// </summary>
     public class TheMealDbClient : ITheMealDbClient
     {
         private const string baseUrl = "www.themealdb.com/api/json/v1/1";
@@ -18,7 +21,8 @@ namespace FoodMenu.Api.Clients
         {
             _client = new RestClient();
         }
-        public async Task<MealsDbResponse> SearchMealByName(string name)
+
+        public async Task<MealsDbResponse?> SearchMealByName(string name)
         {
             var uriBuilder = new UriBuilder($"{baseUrl}/search.php")
             {
@@ -32,7 +36,7 @@ namespace FoodMenu.Api.Clients
             return response;
         }
 
-        public async Task<MealsDbResponse> FilterMealByCategory(string category)
+        public async Task<MealsDbResponse?> FilterMealByCategory(string category)
         {
             var uriBuilder = new UriBuilder($"{baseUrl}/filter.php")
             {
@@ -44,7 +48,7 @@ namespace FoodMenu.Api.Clients
             return response;
         }
 
-        public async Task<MealsDbResponse> FilterMealByArea(string area)
+        public async Task<MealsDbResponse?> FilterMealByArea(string area)
         {
             var uriBuilder = new UriBuilder($"{baseUrl}/filter.php")
             {

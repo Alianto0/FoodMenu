@@ -60,9 +60,9 @@ namespace FoodMenu.Api.UnitTests.Logic
             var response = await mealsRetriever.GetMealByName(testMealName);
 
             // Assert
-            response.Area.Should().Be(expectedReturnedMeal.strArea);
-            response.Category.Should().Be(expectedReturnedMeal.strCategory);
-            response.Name.Should().Be(expectedReturnedMeal.strMeal);
+            response.Area.Should().Be(expectedReturnedMeal.StrArea);
+            response.Category.Should().Be(expectedReturnedMeal.StrCategory);
+            response.Name.Should().Be(expectedReturnedMeal.StrMeal);
         }
 
         [Theory]

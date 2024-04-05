@@ -1,11 +1,20 @@
-﻿namespace FoodMenu.Api.Models
+﻿using System.Text.Json.Serialization;
+
+namespace FoodMenu.Api.Models
 {
     public class MealsDbMeal
     {
-        public int idMeal { get; set; }
-        public string strMeal { get; set; }
-        public string strCategory { get; set; }
-        public string strArea { get; set; }
+        [JsonPropertyName("idMeal")]
+        public int IdMeal { get; set; }
+
+        [JsonPropertyName("strMeal")]
+        public required string StrMeal { get; set; }
+
+        [JsonPropertyName("strCategory")]
+        public required string StrCategory { get; set; }
+
+        [JsonPropertyName("strArea")]
+        public required string StrArea { get; set; }
     }
 }
 

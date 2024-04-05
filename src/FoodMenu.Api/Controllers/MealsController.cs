@@ -7,16 +7,9 @@ namespace FoodMenu.Api.Controllers
 {
     [ApiController]
     [Route("/api/v1/[controller]")]
-    public class MealsController : ControllerBase
+    public class MealsController(IMealsRetriever mealsRetriever) : ControllerBase
     {
-        private readonly ILogger<MealsController> _logger;
-        private readonly IMealsRetriever mealsRetriever;
-
-        public MealsController(ILogger<MealsController> logger, IMealsRetriever mealsRetriever)
-        {
-            _logger = logger;
-            this.mealsRetriever = mealsRetriever;
-        }
+        private readonly IMealsRetriever mealsRetriever = mealsRetriever;
 
         /// <summary>
         /// Gets meal by name.

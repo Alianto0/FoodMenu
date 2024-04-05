@@ -2,6 +2,6 @@
 {
     public class MealsDbResponse
     {
-        public List<MealsDbMeal> Meals { get; set; }
+        public required List<MealsDbMeal> Meals { get; set; }
     }
 }
