@@ -1,0 +1,107 @@
+{
+    "_type": "export",
+    "__export_format": 4,
+    "__export_date": "2024-04-05T06:49:16.753Z",
+    "__export_source": "insomnia.desktop.app:v8.6.1",
+    "resources": [{
+            "_id": "req_1b3ad647b591482bb036ddfc1a017189",
+            "parentId": "wrk_1d7f69a6a5514b66941119e84790c276",
+            "modified": 1712299716668,
+            "created": 1712052545498,
+            "url": "http://localhost:{{Port}}/api/v1/meals/NonExisting",
+            "name": "NonExisting",
+            "description": "",
+            "method": "GET",
+            "body": {},
+            "parameters": [],
+            "headers": [{
+                    "name": "User-Agent",
+                    "value": "insomnia/8.6.1"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1712052545498,
+            "isPrivate": false,
+            "pathParameters": [],
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        }, {
+            "_id": "wrk_1d7f69a6a5514b66941119e84790c276",
+            "parentId": null,
+            "modified": 1712052540078,
+            "created": 1712052540078,
+            "name": "Homework Food Menu",
+            "description": "",
+            "scope": "collection",
+            "_type": "workspace"
+        }, {
+            "_id": "req_ccc2aee6ae9047958bbdfd0ae7248c66",
+            "parentId": "wrk_1d7f69a6a5514b66941119e84790c276",
+            "modified": 1712299065604,
+            "created": 1712056168591,
+            "url": "http://localhost:{{Port}}/api/v1/meals/Arrabiata",
+            "name": "Arrabiata",
+            "description": "",
+            "method": "GET",
+            "body": {},
+            "parameters": [],
+            "headers": [{
+                    "name": "User-Agent",
+                    "value": "insomnia/8.6.1"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1711700255573,
+            "isPrivate": false,
+            "pathParameters": [],
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        }, {
+            "_id": "env_575e784f879710a567c728d1413d31996b1c4098",
+            "parentId": "wrk_1d7f69a6a5514b66941119e84790c276",
+            "modified": 1712052540079,
+            "created": 1712052540079,
+            "name": "Base Environment",
+            "data": {},
+            "dataPropertyOrder": null,
+            "color": null,
+            "isPrivate": false,
+            "metaSortKey": 1712052540079,
+            "_type": "environment"
+        }, {
+            "_id": "jar_575e784f879710a567c728d1413d31996b1c4098",
+            "parentId": "wrk_1d7f69a6a5514b66941119e84790c276",
+            "modified": 1712052540081,
+            "created": 1712052540081,
+            "name": "Default Jar",
+            "cookies": [],
+            "_type": "cookie_jar"
+        }, {
+            "_id": "env_3b54695ef14b41bfbfed809b0c86f91a",
+            "parentId": "env_575e784f879710a567c728d1413d31996b1c4098",
+            "modified": 1712299248851,
+            "created": 1712299011266,
+            "name": "Local",
+            "data": {
+                "Port": 5005
+            },
+            "dataPropertyOrder": {
+                "&": ["Port"]
+            },
+            "color": null,
+            "isPrivate": true,
+            "metaSortKey": 1712299011266,
+            "_type": "environment"
+        }
+    ]
+}
