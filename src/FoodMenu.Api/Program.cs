@@ -1,4 +1,5 @@
 
+using Asp.Versioning;
 using FoodMenu.Api.Clients;
 using FoodMenu.Api.Logic;
 
@@ -22,6 +23,18 @@ namespace FoodMenu.Api
             builder.Services.AddSwaggerGen();
 
             builder.Services.AddRouting(options => options.LowercaseUrls = true);
+
+            builder.Services.AddApiVersioning(options =>
+            {
+                options.DefaultApiVersion = new ApiVersion(1);
+                options.ReportApiVersions = true;
+                options.AssumeDefaultVersionWhenUnspecified = true;
+                options.ApiVersionReader = ApiVersionReader.Default;
+            }).AddApiExplorer(options =>
+            {
+                options.GroupNameFormat = "'v'V";
+                options.SubstituteApiVersionInUrl = true;
+            });
 
             var app = builder.Build();
 

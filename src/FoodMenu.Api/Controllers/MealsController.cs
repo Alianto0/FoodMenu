@@ -1,3 +1,4 @@
+using Asp.Versioning;
 using FoodMenu.Api.Exceptions;
 using FoodMenu.Api.Logic;
 using FoodMenu.Api.Models;
@@ -6,7 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 namespace FoodMenu.Api.Controllers
 {
     [ApiController]
-    [Route("/api/v1/[controller]")]
+    [ApiVersion(1)]
+    [Route("/api/v{v:apiVersion}/[controller]")]
     public class MealsController(IMealsRetriever mealsRetriever) : ControllerBase
     {
         private readonly IMealsRetriever mealsRetriever = mealsRetriever;
@@ -15,7 +17,8 @@ namespace FoodMenu.Api.Controllers
         /// Gets meal by name.
         /// </summary>
         /// <param name="name">Name of the meal to dsearch for.</param>
-        /// <returns>Meal with suggested alternatives by category and area.</returns>       
+        /// <returns>Meal with suggested alternatives by category and area.</returns>   
+        [MapToApiVersion(1)]
         [HttpGet("{name}")]
         [ProducesResponseType(typeof(Meal), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status404NotFound)]
